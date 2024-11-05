@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AppBar, Toolbar,styled,InputBase, Box} from '@mui/material'
 import {AccountCircleOutlined, AppsOutlined, HelpOutlineOutlined, Menu as MenuIcon, SettingsOutlined} from '@mui/icons-material'
 import { gmaillogo } from '../constants/constant'
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
+import Profile from './Profile';
 
 const StyledAppBar = styled(AppBar)({
         background :'#F5F5F5',
@@ -38,6 +39,14 @@ const Optionmenu =styled(Box)({
 })
 
 function Header({toggleDrawer}) {
+
+  const [openpDialog,setpDialog] = useState(false);
+
+const onpclick = () => {
+  setpDialog(true);
+}
+
+
   return (
     <div>
         <StyledAppBar position='static'>
@@ -45,18 +54,18 @@ function Header({toggleDrawer}) {
             <MenuIcon color='action' cursor='pointer' onClick={toggleDrawer}/>
             <img src={gmaillogo} alt='logo' style={{height:40,marginLeft:30}} />
             <Searchdraw>
-            <SearchIcon color='action' />
+            <SearchIcon color='action'cursor='pointer' />
             <InputBase placeholder='Search mail'/>
-            <TuneIcon color ='action' />
+            <TuneIcon color ='action' cursor='pointer'/>
             </Searchdraw>
             <Optionmenu>
-              <HelpOutlineOutlined color='action' />
-              <SettingsOutlined color='action'/>
-              <AppsOutlined color='action'/>
-              <AccountCircleOutlined color='action'/>
+              <HelpOutlineOutlined color='action'cursor='pointer' />
+              <SettingsOutlined color='action'cursor='pointer'/>
+              <AppsOutlined color='action'cursor='pointer'/>
+              <AccountCircleOutlined color='action'cursor='pointer' onClick={() => onpclick() }/>
 
             </Optionmenu>
-
+            <Profile openpDialog={openpDialog} setpDialog={setpDialog}/>
             </Toolbar>
         </StyledAppBar>
     </div>
