@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
+import Emails from '../components/Emails';
 
 function Main() {
 
@@ -13,7 +14,7 @@ function Main() {
     <div>
         <Header toggleDrawer={toggleDrawer}/>
         <Sidebar openDrawer={openDrawer}/>
-        main
+        <Emails openDrawer={openDrawer}/>
     </div>
   )
 }
