@@ -23,7 +23,7 @@ const Wrapper = styled(Box)({
     }
 })
 
-function Email() {
+function Project() {
   return (
     <Box>
     <Wrapper>
@@ -48,4 +48,4 @@ function Email() {
   )
 }
 
-export default Email
+export default Project
