@@ -16,7 +16,7 @@ function Sidebar({openDrawer}) {
       '& .MuiDrawer-paper':{
         marginTop: '64px',
         width: 250,
-        background: '#283747',
+        background: '#F5F5F5',
         borderRight: 'none',
         height:'calc(100vh-64px)'
       }

@@ -5,14 +5,17 @@ import { gmaillogo } from '../constants/constant'
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 import Profile from './Profile';
+import Image from '../assets/img.jpg'
+
 
 const StyledAppBar = styled(AppBar)({
         background :'#F5F5F5',
+        // background : '#D3D3D3',
         boxShadow : 'none'
 })
 
 const Searchdraw = styled(Box)({
-    background : '#283747',
+    background : '#f2f6fc',
     marginLeft : 80,
     borderRadius : 80,
     minWidth : 690,
@@ -62,7 +65,7 @@ const onpclick = () => {
               <HelpOutlineOutlined color='action'cursor='pointer' />
               <SettingsOutlined color='action'cursor='pointer'/>
               <AppsOutlined color='action'cursor='pointer'/>
-              <AccountCircleOutlined color='action'cursor='pointer' onClick={() => onpclick() }/>
+              <img src={Image} alt="Profile" style={{ cursor: 'pointer', borderRadius: '50%', width: '30px', height: '30px', marginLeft: '15px' }} onClick={() => onpclick()} />
 
             </Optionmenu>
             <Profile openpDialog={openpDialog} setpDialog={setpDialog}/>

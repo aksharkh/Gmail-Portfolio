@@ -14,12 +14,14 @@ export const SIDEBAR_DATA = [
     {
         name:'github',
         title:'GitHub',
-        icon: GitHub
+        icon: GitHub,
+        url : 'https://github.com/aksharkh'
     },
     {
         name:'linkdin',
         title:'Linkdin',
-        icon: LinkedIn
+        icon: LinkedIn,
+        url : 'https://www.linkedin.com/in/akshar-k-h-1b404521b/'
     },
     {
         name:'more',
