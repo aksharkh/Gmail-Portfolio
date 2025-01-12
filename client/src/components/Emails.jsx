@@ -38,7 +38,7 @@ function Emails() {
     }
   };
   return (
-    <Box style={openDrawer ? {marginLeft: 250, width:'calc(100%-250px)'} : {width:'100%'}}>
+    <Box style={openDrawer ? {marginLeft: 250, width:'calc(100% - 250px)'} : {width:'100%'}}>
       <Box style = {{padding:'20px 10px 0 10px',display: 'flex', justifycontent: 'space-between', alignItems: 'center'}}>
         <Checkbox />
         <DeleteOutline />
@@ -49,7 +49,7 @@ function Emails() {
             key={button.name}
             onClick={() => handleButtonClick(index)}
             sx={{
-              height: '70px',
+              height: '60px',
               color: 'black',
               fontSize: 'medium',
               textTransform: 'none',
