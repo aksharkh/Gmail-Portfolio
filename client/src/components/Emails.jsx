@@ -7,6 +7,7 @@ import Email from './Email';
 import { buttonData } from './config/buttonconfig';
 import Project from './Project';
 import Work from './Work';
+import ViewEmail from './ViewEmail';
 
 
 const Wrapperprimary = styled(Box)({
@@ -21,25 +22,42 @@ const Wrapperprimary = styled(Box)({
 function Emails() {
   const {openDrawer} = useOutletContext();
   const [activeButton, setActiveButton] = useState(null);
+  const [viewEmail, setViewEmail] = useState(false);
+
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
+    setViewEmail(false); // Ensure the email view is closed when switching tabs
   };
+
+  const handleBoxClick = () => {
+    setViewEmail(true);
+  };
+
+  const handleBackClick = () => {
+    setViewEmail(false);
+  };
+
+
   const renderContent = () => {
+    if (viewEmail) {
+      return <ViewEmail onBackClick={handleBackClick} />;
+    }
+    
     switch (activeButton) {
       case 0:
-        return <Email />;
+        return <Email onBoxClick={handleBoxClick} />;
       case 1:
         return <Project />;
       case 2:
         return <Work />;
       default:
-        return <Email />;
+        return <Email onBoxClick={handleBoxClick}/>;
     }
   };
   return (
     <Box style={openDrawer ? {marginLeft: 250, width:'calc(100% - 250px)'} : {width:'100%'}}>
-      <Box style = {{padding:'20px 10px 0 10px',display: 'flex', justifycontent: 'space-between', alignItems: 'center'}}>
+      <Box style = {{padding:'2px 10px 0 10px',display: 'flex', justifycontent: 'space-between', alignItems: 'center'}}>
         <Checkbox />
         <DeleteOutline />
       </Box>

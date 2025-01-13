@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import Image from '../assets/img.jpg';
 
-function ViewProject1() {
+function ViewWork1() {
   return (
     <Box>
       <Box>
@@ -40,4 +40,4 @@ function ViewProject1() {
   );
 }
 
-export default ViewProject1;
+export default ViewWork1;

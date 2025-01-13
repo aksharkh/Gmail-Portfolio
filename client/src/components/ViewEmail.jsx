@@ -2,12 +2,13 @@ import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import Image from '../assets/img.jpg';
+import PropTypes from 'prop-types';
 
-function ViewEmail() {
+function ViewEmail({ onBackClick }) {
   return (
     <Box>
       <Box>
-        <ArrowBack style={{ marginLeft: '20px' }} />
+        <ArrowBack  style={{ marginLeft: '20px' }} onClick={onBackClick} />
         <Delete style={{ marginLeft: '20px' }} />
       </Box>
       <Box>
@@ -26,7 +27,7 @@ function ViewEmail() {
         </Box>
       </Box>
       <Box style={{ padding: '20px' }}>
-        <Typography variant="body1" paragraph>
+        <Typography variant="body1" >
           This is a sample paragraph. You can add as much content as needed here. 
           The `Typography` component with `variant="body1"` makes the text look like a paragraph, 
           and you can use the `paragraph` prop to add space below the paragraph.
@@ -39,5 +40,9 @@ function ViewEmail() {
     </Box>
   );
 }
+
+ViewEmail.propTypes = {
+  onBackClick: PropTypes.func.isRequired, // Ensure onBackClick is passed
+};
 
 export default ViewEmail;
