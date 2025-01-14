@@ -2,7 +2,7 @@ import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import Image from '../assets/img.jpg';
-import PropTypes from 'prop-types';
+
 
 function ViewEmail({ onBackClick }) {
   return (
@@ -41,8 +41,6 @@ function ViewEmail({ onBackClick }) {
   );
 }
 
-ViewEmail.propTypes = {
-  onBackClick: PropTypes.func.isRequired, // Ensure onBackClick is passed
-};
+
 
 export default ViewEmail;

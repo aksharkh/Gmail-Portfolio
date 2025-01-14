@@ -22,37 +22,29 @@ const Wrapperprimary = styled(Box)({
 function Emails() {
   const {openDrawer} = useOutletContext();
   const [activeButton, setActiveButton] = useState(null);
-  const [viewEmail, setViewEmail] = useState(false);
+
 
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
-    setViewEmail(false); // Ensure the email view is closed when switching tabs
   };
 
-  const handleBoxClick = () => {
-    setViewEmail(true);
-  };
 
-  const handleBackClick = () => {
-    setViewEmail(false);
-  };
+
+  
 
 
   const renderContent = () => {
-    if (viewEmail) {
-      return <ViewEmail onBackClick={handleBackClick} />;
-    }
     
     switch (activeButton) {
       case 0:
-        return <Email onBoxClick={handleBoxClick} />;
+        return <Email />;
       case 1:
         return <Project />;
       case 2:
         return <Work />;
       default:
-        return <Email onBoxClick={handleBoxClick}/>;
+        return <Email />;
     }
   };
   return (
