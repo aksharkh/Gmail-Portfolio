@@ -2,8 +2,7 @@ import { LabelImportant, StarOutlined } from '@mui/icons-material';
 import { Checkbox, Box, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import ViewWork from './ViewWork';
-import ViewWork1 from './ViewWork1';
-import ViewWork2 from './ViewWork2';
+
 
 
 const Wrapper = styled(Box)({
@@ -31,9 +30,7 @@ function Work() {
   const [activeEmail, setActiveEmail] = useState(null);
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1' },
-    { id: 2, subject: 'Email 2', content: 'This is the content of email 2' },
-    { id: 3, subject: 'Email 3', content: 'This is the content of email 3' },
+    { id: 1, subject: 'About Me', content: 'This is the content of email 1' }
   ];
 
   const handleBoxClick = (emailId) => {
@@ -43,13 +40,7 @@ function Work() {
     return <ViewWork onClose={() => setActiveEmail(null)} />;
   }
 
-  if (activeEmail === 2) {
-    return <ViewWork1 onClose={() => setActiveEmail(null)} />;
-  }
-
-  if (activeEmail === 3) {
-    return <ViewWork2 onClose={() => setActiveEmail(null)} />;
-  }
+  
 
   return (
     <Box>
