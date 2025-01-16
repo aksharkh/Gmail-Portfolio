@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import ViewProject from './ViewProject';
 import ViewProject1 from './ViewProject1';
 import ViewProject2 from './ViewProject2';
+import { useNavigate } from 'react-router-dom';
  
 
 const Wrapper = styled(Box)({
@@ -28,28 +29,18 @@ const Wrapper = styled(Box)({
 });
 
 function Project() {
-  const [activeEmail, setActiveEmail] = useState(null);
+  const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1' },
-    { id: 2, subject: 'Email 2', content: 'This is the content of email 2' },
-    { id: 3, subject: 'Email 3', content: 'This is the content of email 3' },
+    { id: 1, subject: 'About Me', content: 'This is the content of email 1', path: 'aboutme' },
+    { id: 2, subject: 'Email 2', content: 'This is the content of email 2', path: 'email2' },
+    { id: 3, subject: 'Email 3', content: 'This is the content of email 3', path: 'email3' },
   ];
 
-  const handleBoxClick = (emailId) => {
-    setActiveEmail(emailId);
+  // Handle email click by navigating to the email detail route
+  const handleProjectClick = (emailId) => {
+    navigate(`/emails/inbox/project/${emailId}`);  // Navigate to the email detail view
   };
-  if (activeEmail === 1) {
-    return <ViewProject onClose={() => setActiveEmail(null)} />;
-  }
-
-  if (activeEmail === 2) {
-    return <ViewProject1 onClose={() => setActiveEmail(null)} />;
-  }
-
-  if (activeEmail === 3) {
-    return <ViewProject2 onClose={() => setActiveEmail(null)} />;
-  }
 
   return (
     <Box>
@@ -59,7 +50,7 @@ function Project() {
           <StarOutlined />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-            onClick={() => handleBoxClick(email.id)}
+            onClick={() => handleProjectClick(email.id)}
             style={{ cursor: 'pointer' }}
           >
             <Typography>{email.subject}</Typography>

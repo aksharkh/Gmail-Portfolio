@@ -2,6 +2,7 @@ import { LabelImportant, StarOutlined } from '@mui/icons-material';
 import { Checkbox, Box, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import ViewWork from './ViewWork';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -27,18 +28,18 @@ const Wrapper = styled(Box)({
 });
 
 function Work() {
-  const [activeEmail, setActiveEmail] = useState(null);
+  const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1' }
+    { id: 1, subject: 'About Me', content: 'This is the content of email 1', path: 'aboutme' },
+    { id: 2, subject: 'Email 2', content: 'This is the content of email 2', path: 'email2' },
+    { id: 3, subject: 'Email 3', content: 'This is the content of email 3', path: 'email3' },
   ];
 
-  const handleBoxClick = (emailId) => {
-    setActiveEmail(emailId);
+  // Handle email click by navigating to the email detail route
+  const handleWorkClick = (emailId) => {
+    navigate(`/emails/inbox/work/${emailId}`);  // Navigate to the email detail view
   };
-  if (activeEmail === 1) {
-    return <ViewWork onClose={() => setActiveEmail(null)} />;
-  }
 
   
 
@@ -50,7 +51,7 @@ function Work() {
           <StarOutlined />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-            onClick={() => handleBoxClick(email.id)}
+            onClick={() => handleWorkClick(email.id)}
             style={{ cursor: 'pointer' }}
           >
             <Typography>{email.subject}</Typography>

@@ -2,12 +2,20 @@ import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import Image from '../assets/img.jpg';
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function ViewWork() {
+  const { emailId } = useParams();
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate('/emails/inbox/work'); // Navigate back to the "Primary" emails section
+  };
   return (
     <Box>
       <Box>
-        <ArrowBack style={{ marginLeft: '20px' }} />
+        <ArrowBack style={{ marginLeft: '20px' }} onClick={handleBackClick} />
         <Delete style={{ marginLeft: '20px' }} />
       </Box>
       <Box>

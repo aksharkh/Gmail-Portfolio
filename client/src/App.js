@@ -5,6 +5,8 @@ import Project from './components/Project';
 import Work from './components/Work';
 import Email from './components/Email';
 import ViewEmail from './components/ViewEmail';
+import ViewProject from './components/ViewProject';
+import ViewWork from './components/ViewWork';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,9 @@ const router = createBrowserRouter([
           { path: 'primary', element: <Email /> },
           { path: 'primary/:emailId', element: <ViewEmail /> },
           { path: 'project', element: <Project /> },
+          { path: 'project/:emailId', element: <ViewProject /> },
           { path: 'work', element: <Work /> },
+          { path: 'work/:emailId', element: <ViewWork /> },
         ],
       },
       { path: '/', element: <Navigate to="/emails/inbox/primary" /> }, // Redirect to default
