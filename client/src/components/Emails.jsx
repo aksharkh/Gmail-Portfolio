@@ -1,63 +1,50 @@
-
-import React, {useState} from 'react'
-import { useOutletContext } from 'react-router-dom'
-import {Box,Button, Checkbox, List, Typography, styled} from '@mui/material'
-import { Bookmark, DeleteOutline,  Image, PeopleAlt} from '@mui/icons-material'
-import Email from './Email';
+import React from 'react';
+import { useNavigate, useLocation, Outlet } from 'react-router-dom';
+import { Box, Button, Checkbox, List, styled } from '@mui/material';
+import { DeleteOutline } from '@mui/icons-material';
 import { buttonData } from './config/buttonconfig';
-import Project from './Project';
-import Work from './Work';
-import ViewEmail from './ViewEmail';
-
+import { useOutletContext } from 'react-router-dom';
 
 const Wrapperprimary = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  '& > button':{
+  '& > button': {
     minWidth: 300,
-    
-  }
-})
+  },
+});
 
 function Emails() {
   const {openDrawer} = useOutletContext();
-  const [activeButton, setActiveButton] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  // Extract the active tab from the URL
+  const activeTab = location.pathname.split('/').pop();
 
-
-  const handleButtonClick = (index) => {
-    setActiveButton(index);
-  };
-
-
-
-  
-
-
-  const renderContent = () => {
-    
-    switch (activeButton) {
-      case 0:
-        return <Email />;
-      case 1:
-        return <Project />;
-      case 2:
-        return <Work />;
-      default:
-        return <Email />;
-    }
+  const handleButtonClick = (path) => {
+    navigate(`/emails/inbox/${path}`); // Navigate to the new URL
   };
   return (
     <Box style={openDrawer ? {marginLeft: 250, width:'calc(100% - 250px)'} : {width:'100%'}}>
-      <Box style = {{padding:'2px 10px 0 10px',display: 'flex', justifycontent: 'space-between', alignItems: 'center'}}>
+      {/* Top Actions */}
+      <Box
+        style={{
+          padding: '2px 10px 0 10px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         <Checkbox />
         <DeleteOutline />
       </Box>
+
+      {/* Button Navigation */}
       <Wrapperprimary>
-      {buttonData.map((button, index) => (
+        {buttonData.map((button, index) => (
           <Button
             key={button.name}
-            onClick={() => handleButtonClick(index)}
+            onClick={() => handleButtonClick(button.path)}
             sx={{
               height: '60px',
               color: 'black',
@@ -65,24 +52,26 @@ function Emails() {
               textTransform: 'none',
               border: 'none',
               borderRadius: 0,
-              backgroundColor: activeButton === index ? 'lightgray' : 'white',
-              borderBottom: activeButton === index ? '2px solid black' : 'none',
+              backgroundColor: activeTab === button.path ? 'lightgray' : 'white',
+              borderBottom: activeTab === button.path ? '2px solid black' : 'none',
               '&:hover': {
-                backgroundColor: activeButton === index ? 'gray' : 'gray',
+                backgroundColor: activeTab === button.path ? 'gray' : 'lightgray',
               },
             }}
-            variant={activeButton === index ? 'contained' : 'outlined'}
+            variant={activeTab === button.path ? 'contained' : 'outlined'}
           >
-            {button.icon} 
+            {button.icon}
             {button.title}
           </Button>
         ))}
       </Wrapperprimary>
+
+      {/* Render Child Components */}
       <List>
-      {renderContent()}
+        <Outlet />
       </List>
     </Box>
-  )
+  );
 }
 
-export default Emails
+export default Emails;

@@ -4,19 +4,22 @@ export const buttonData = [
     {
         name:'primary',
         title:'Primary',
-        icon : <Image />
+        icon : <Image />,
+        path : 'primary'
         
     },
     {
         name:'projects',
         title:'projects',
-        icon : <PeopleAlt />
+        icon : <PeopleAlt />,
+        path : 'project'
         
     },
     {
         name:'work experience',
         title:'Work Experience',
-        icon : <Bookmark />
+        icon : <Bookmark />,
+        path : 'work'
         
     }
 ]
