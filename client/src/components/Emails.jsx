@@ -36,7 +36,7 @@ function Emails() {
         }}
       >
         <Checkbox />
-        <DeleteOutline />
+        <DeleteOutline style={{cursor:'pointer'}}/>
       </Box>
 
       {/* Button Navigation */}

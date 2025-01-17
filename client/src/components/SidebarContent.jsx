@@ -3,7 +3,6 @@ import { Box , Button ,List,ListItem,styled} from '@mui/material'
 import { CreateOutlined } from '@mui/icons-material'
 import { SIDEBAR_DATA } from './config/sidebar.config'
 import ComposeMail from './ComposeMail'
-import { useParams } from 'react-router-dom'
 
 
 const Container = styled(Box)({
@@ -14,6 +13,15 @@ const Container = styled(Box)({
         fontWeight:500,
         cursor:'pointer'
     },
+    '& > ul > li:first-of-type': {
+        background : '#d3e3fd', 
+        borderRadius : '16px '  
+  },
+  '& > ul > li:hover': {
+    backgroundColor: '#f0f0f0', 
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+    borderRadius : '16px ' 
+  },
     '& > ul> li > svg':{
         marginRight:20
     }
@@ -33,7 +41,7 @@ const ComposedButton = styled(Button)({
 function SidebarContent() {
     const[openDialog, setopenDialog] = useState(false);
 
-    const {type} = useParams();
+    
 
     const onComposeclick = () =>{
         setopenDialog(true);
@@ -52,7 +60,7 @@ function SidebarContent() {
         <List>
             {
                 SIDEBAR_DATA.map(data => (
-                    <ListItem style={type === data.name.toLowerCase() ? {background : '#d3e3fd', borderRadius : '16px '} : {}}
+                    <ListItem 
                     onClick={() => handleListItemClick(data.url)}>
                        <data.icon fontSize='medium'/> {data.title}
                     </ListItem>
