@@ -31,9 +31,7 @@ function Work() {
   const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1', path: 'aboutme' },
-    { id: 2, subject: 'Email 2', content: 'This is the content of email 2', path: 'email2' },
-    { id: 3, subject: 'Email 3', content: 'This is the content of email 3', path: 'email3' },
+    { id: 1, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:00 PM' },
   ];
 
   // Handle email click by navigating to the email detail route
@@ -51,12 +49,13 @@ function Work() {
           <StarOutlined />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-            onClick={() => handleWorkClick(email.id)}
-            style={{ cursor: 'pointer' }}
-          >
-            <Typography>{email.subject}</Typography>
-            <Typography style={{ marginLeft: '300px' }}>{email.content}</Typography>
-          </Box>
+                      onClick={() => handleWorkClick(email.id)}  // Use navigate here
+                      style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%' }}
+                    >
+                      <Typography style={{ flex: 1 }}>{email.subject}</Typography>
+                      <Typography style={{ flex: 2, textAlign: 'center' }}>{email.content}</Typography>
+                      <Typography style={{ flex: 1, textAlign: 'right',fontSize:'small' }}>{email.time}</Typography>
+                    </Box>
         </Wrapper>
       ))}
     </Box>

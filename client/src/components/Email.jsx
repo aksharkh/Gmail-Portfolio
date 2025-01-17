@@ -28,14 +28,18 @@ function Email() {
   const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1' },
-    { id: 2, subject: 'Email 2', content: 'This is the content of email 2' },
-    { id: 3, subject: 'Email 3', content: 'This is the content of email 3' },
+    { id: 1, subject: 'About Me', content: 'A developer, creator, and lifelong learner.', time: '10:00 AM' },
+    { id: 2, subject: 'Resume', content: 'Comprehensive list of my work and achievements', time: '11:00 AM' },
+    { id: 3, subject: 'Education', content: 'This is the content of email 3', time: '12:00 PM' },
   ];
 
   // Handle email click by navigating to the email detail route
   const handleEmailClick = (emailId) => {
-    navigate(`/emails/inbox/primary/${emailId}`);  // Navigate to the email detail view
+    if (emailId === 2) {
+      window.open('https://drive.google.com/file/d/1v4qfTdeauw_OxfOB962Vkre5XguYdI5m/view', '_blank');  // Open the drive link in a new tab
+    } else {
+      navigate(`/emails/inbox/primary/${emailId}`);  // Navigate to the email detail view
+    } 
   };
 
   return (
@@ -47,10 +51,11 @@ function Email() {
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
             onClick={() => handleEmailClick(email.id)}  // Use navigate here
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%' }}
           >
-            <Typography>{email.subject}</Typography>
-            <Typography style={{ marginLeft: '300px' }}>{email.content}</Typography>
+            <Typography style={{ flex: 1 }}>{email.subject}</Typography>
+            <Typography style={{ flex: 2, textAlign: 'center' }}>{email.content}</Typography>
+            <Typography style={{ flex: 1, textAlign: 'right',fontSize:'small' }}>{email.time}</Typography>
           </Box>
         </Wrapper>
       ))}
