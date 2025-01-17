@@ -8,6 +8,7 @@ import { useOutletContext } from 'react-router-dom';
 const Wrapperprimary = styled(Box)({
   display: 'flex',
   alignItems: 'center',
+  borderBottom: '1px solid lightgray',
   '& > button': {
     minWidth: 300,
   },

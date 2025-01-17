@@ -28,9 +28,9 @@ function Email() {
   const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1', path: 'aboutme' },
-    { id: 2, subject: 'Email 2', content: 'This is the content of email 2', path: 'email2' },
-    { id: 3, subject: 'Email 3', content: 'This is the content of email 3', path: 'email3' },
+    { id: 1, subject: 'About Me', content: 'This is the content of email 1' },
+    { id: 2, subject: 'Email 2', content: 'This is the content of email 2' },
+    { id: 3, subject: 'Email 3', content: 'This is the content of email 3' },
   ];
 
   // Handle email click by navigating to the email detail route

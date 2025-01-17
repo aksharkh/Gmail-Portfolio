@@ -7,6 +7,9 @@ import Email from './components/Email';
 import ViewEmail from './components/ViewEmail';
 import ViewProject from './components/ViewProject';
 import ViewWork from './components/ViewWork';
+import ViewEmail2 from './components/ViewEmail2';
+import ViewEmail1 from './components/ViewEmail1';
+
 
 const router = createBrowserRouter([
   {
@@ -18,7 +21,9 @@ const router = createBrowserRouter([
         element: <Emails />,
         children: [
           { path: 'primary', element: <Email /> },
-          { path: 'primary/:emailId', element: <ViewEmail /> },
+          { path: 'primary/1', element: <ViewEmail /> }, // Render ViewEmail for emailId 1
+          { path: 'primary/2', element: <ViewEmail1 /> }, // Render ViewEmail1 for emailId 2
+          { path: 'primary/3', element: <ViewEmail2 /> }, // Render ViewEmail2 for emailId 3
           { path: 'project', element: <Project /> },
           { path: 'project/:emailId', element: <ViewProject /> },
           { path: 'work', element: <Work /> },
