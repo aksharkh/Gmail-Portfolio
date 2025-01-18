@@ -1,7 +1,6 @@
 import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import Image from '../assets/img.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
