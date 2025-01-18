@@ -1,4 +1,4 @@
-import { LabelImportant, StarOutlined } from '@mui/icons-material';
+import { LabelImportant, StarOutline } from '@mui/icons-material';
 import { Checkbox, Box, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import ViewProject from './ViewProject';
@@ -32,9 +32,13 @@ function Project() {
   const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'This is the content of email 1', path: 'aboutme' },
-    { id: 2, subject: 'Email 2', content: 'This is the content of email 2', path: 'email2' },
-    { id: 3, subject: 'Email 3', content: 'This is the content of email 3', path: 'email3' },
+    { id: 1, subject: 'Fronted', content: 'Smart Home Control Dashboard', time: '10:11 PM' },
+    { id: 2, subject: 'MERN stack', content: 'EduQuest: An AI-Powered Educational Platform', time: '08:48 PM' },
+    { id: 3, subject: 'MERN stack', content: 'Social Media Platform', time: '06:05 PM' },
+    { id: 4, subject: 'MERN stack', content: 'Vital: Medicine Filtering Application', time: '03:00 PM' },
+    { id: 5, subject: 'Django', content: 'Word Building Game', time: '11:12 AM' },
+    { id: 6, subject: 'MySQL', content: 'Real-Time Chat System', time: '09:30 AM' },
+    { id: 7, subject: 'MERN stack', content: 'Hackthon Management Dashboard', time: '08:00 AM' },
   ];
 
   // Handle email click by navigating to the email detail route
@@ -47,15 +51,16 @@ function Project() {
       {emails.map((email) => (
         <Wrapper key={email.id}>
           <Checkbox />
-          <StarOutlined />
+          <StarOutline />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-            onClick={() => handleProjectClick(email.id)}
-            style={{ cursor: 'pointer' }}
-          >
-            <Typography>{email.subject}</Typography>
-            <Typography style={{ marginLeft: '300px' }}>{email.content}</Typography>
-          </Box>
+              onClick={() => handleProjectClick(email.id)}  // Use navigate here
+              style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%' }}
+            >
+              <Typography style={{ flex: 1 }}>{email.subject}</Typography>
+              <Typography style={{ flex: 2, textAlign: 'center' }}>{email.content}</Typography>
+              <Typography style={{ flex: 1, textAlign: 'right',fontSize:'small' }}>{email.time}</Typography>
+            </Box>
         </Wrapper>
       ))}
     </Box>

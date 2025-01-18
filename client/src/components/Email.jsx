@@ -1,4 +1,4 @@
-import { LabelImportant, StarOutlined } from '@mui/icons-material';
+import { LabelImportant, StarOutline } from '@mui/icons-material';
 import { Checkbox, Box, styled, Typography } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -28,9 +28,9 @@ function Email() {
   const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'About Me', content: 'A developer, creator, and lifelong learner.', time: '10:00 AM' },
-    { id: 2, subject: 'Resume', content: 'Comprehensive list of my work and achievements', time: '11:00 AM' },
-    { id: 3, subject: 'Education', content: 'This is the content of email 3', time: '12:00 PM' },
+    { id: 1, subject: 'About Me', content: 'A developer, creator, and lifelong learner.', time: '01:15 PM' },
+    { id: 2, subject: 'Resume', content: 'Comprehensive list of my work and achievements', time: '11:30 AM' },
+    { id: 3, subject: 'Education', content: 'My Education Journey', time: '09:45 AM' },
   ];
 
   // Handle email click by navigating to the email detail route
@@ -47,7 +47,7 @@ function Email() {
       {emails.map((email) => (
         <Wrapper key={email.id}>
           <Checkbox />
-          <StarOutlined />
+          <StarOutline />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
             onClick={() => handleEmailClick(email.id)}  // Use navigate here

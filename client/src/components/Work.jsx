@@ -1,4 +1,4 @@
-import { LabelImportant, StarOutlined } from '@mui/icons-material';
+import { LabelImportant, StarOutline } from '@mui/icons-material';
 import { Checkbox, Box, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import ViewWork from './ViewWork';
@@ -31,7 +31,7 @@ function Work() {
   const navigate = useNavigate();  // Initialize navigate
 
   const emails = [
-    { id: 1, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:00 PM' },
+    { id: 1, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:15 PM' },
   ];
 
   // Handle email click by navigating to the email detail route
@@ -46,7 +46,7 @@ function Work() {
       {emails.map((email) => (
         <Wrapper key={email.id}>
           <Checkbox />
-          <StarOutlined />
+          <StarOutline />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
                       onClick={() => handleWorkClick(email.id)}  // Use navigate here

@@ -6,7 +6,7 @@ const Header = styled(Box)({
     display: 'flex',
     justifyContent:'space-between',
     padding:'15px 20px',
-    background: '#283747',
+    background: '#d3e3fd',
     '& > p':{
         fontSize:20,
         fontWeight: 600
@@ -108,6 +108,7 @@ const onValuechange = (e) => {
             <DeleteOutline cursor='pointer' />
            </Footer>
         </Dialog>
+        
   )
 }
 

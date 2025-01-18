@@ -1,16 +1,16 @@
-import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
+import { ArrowBack, Delete, InsertEmoticon } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import Image from '../assets/img.jpg'; // Replace with EduQuest project image
+import Image from '../assets/img.jpg'; // Replace with the actual project image
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-function ViewProject1() {
+function ViewProject4() {
   const { emailId } = useParams();
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/emails/inbox/project'); // Navigate back to the "Primary" emails section
+    navigate('/emails/inbox/project'); // Navigate back to the projects list or inbox section
   };
 
   return (
@@ -21,7 +21,7 @@ function ViewProject1() {
       </Box>
       <Box>
         <Typography variant="h5" align="center">
-          <strong>EduQuest: An AI-Powered Educational Platform</strong>
+          <strong>Word Building Game (Django)</strong>
         </Typography>
       </Box>
       <Box
@@ -35,7 +35,7 @@ function ViewProject1() {
         <Box style={{ display: 'flex', alignItems: 'center' }}>
           <img
             src={Image}
-            alt="EduQuest"
+            alt="Word Building Game"
             style={{
               cursor: 'pointer',
               borderRadius: '50%',
@@ -45,47 +45,42 @@ function ViewProject1() {
             }}
           />
           <Typography>
-            <strong>EduQuest Project</strong>
+            <strong>Django</strong>
           </Typography>
         </Box>
         <Box>
-          <Star style={{ cursor: 'pointer', marginRight: '10px' }} />
           <InsertEmoticon style={{ cursor: 'pointer' }} />
         </Box>
       </Box>
       <Box style={{ padding: '20px', paddingLeft: '50px', paddingRight: '50px' }}>
         <Typography variant="h6" align="center" paragraph>
-          <strong>An Educational Platform for Primary Government Schools</strong>
+          <strong>A Fun Word Building Game Played with the System</strong>
         </Typography>
         <Typography variant="body1" paragraph>
-          The <strong>EduQuest Project</strong> is a platform designed specifically for primary government school teachers and students to 
-          enhance their learning experience. The platform allows teachers to create and manage <strong>MCQ-based tests</strong>, and students 
-          can take these tests seamlessly. It also includes advanced AI-powered proctoring to ensure a fair testing environment.
+          The <strong>Word Building Game</strong> is a fun and interactive game built with Django. In this game, players take turns to form words 
+          where the word must begin with the last letter of the previous word. The length of the word determines the score, and the player with 
+          the highest score wins.
         </Typography>
         <Typography variant="body1" paragraph>
           <strong>Key Features:</strong>
         </Typography>
         <Typography variant="body1" paragraph>
-          - Teachers can create tests by adding questions and answers.
+          - Players must form a word that starts with the last character of the previous word.
           <br />
-          - AI proctoring powered by <strong>YOLO object detection</strong> and <strong>TensorFlow</strong> to detect malpractice, such as:
+          - The score is calculated based on the length of the word.
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;• Multiple face detection.
+          - The game is played against the system, where the system also generates words.
           <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;• Phone detection.
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;• No face detection.
-          <br />
-          - Comprehensive malpractice reports are generated for teachers, providing detailed insights into student behavior during the tests.
+          - The player with the highest score at the end wins.
         </Typography>
         <Typography variant="body1" paragraph>
-          This project demonstrates the integration of AI into education, showcasing my ability to work with machine learning models and apply 
-          them in real-world scenarios. The combination of technical innovation and educational impact makes this project truly unique.
+          This project demonstrates my ability to integrate game logic with <strong>Django</strong> and <strong>JavaScript</strong> for an interactive and engaging game 
+          experience. It also showcases my skills in backend development, user interaction, and real-time gameplay.
         </Typography>
         <Typography variant="body1" align="center" sx={{ mt: 1 }}>
           Check out the project details here:{' '}
           <a
-            href="https://github.com/aksharkh/eduquest" // Replace with actual link
+            href="https://github.com/aksharkh/word-building-game" // Replace with actual link
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -94,7 +89,7 @@ function ViewProject1() {
               fontWeight: 'bold',
             }}
           >
-            EduQuest Project
+            Word Building Game
           </a>
         </Typography>
       </Box>
@@ -102,4 +97,4 @@ function ViewProject1() {
   );
 }
 
-export default ViewProject1;
+export default ViewProject4;

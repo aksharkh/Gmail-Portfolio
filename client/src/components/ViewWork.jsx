@@ -5,6 +5,7 @@ import Image from '../assets/img.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Company from  '../assets/company.png';
 
 function ViewWork() {
   const { emailId } = useParams();
@@ -26,7 +27,7 @@ function ViewWork() {
         style={{display: 'flex',alignItems: 'center',justifyContent: 'space-between', padding: '10px 20px', }}>
         <Box style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src={Image} alt="img"style={{cursor: 'pointer',borderRadius: '50%',width: '50px',height: '50px',marginRight: '15px',}}/>
+            src={Company} alt="img"style={{cursor: 'pointer',borderRadius: '50%',width: '50px',height: '50px',marginRight: '15px',}}/>
           <Typography><strong>Internship</strong></Typography>
         </Box>
         <Box>

@@ -7,11 +7,6 @@ export const SIDEBAR_DATA = [
         icon: Photo
     },
     {
-        name:'starred',
-        title:'Starred',
-        icon: StarOutline
-    },
-    {
         name:'github',
         title:'GitHub',
         icon: GitHub,
@@ -22,6 +17,11 @@ export const SIDEBAR_DATA = [
         title:'Linkdin',
         icon: LinkedIn,
         url : 'https://www.linkedin.com/in/akshar-k-h-1b404521b/'
+    },
+    {
+        name:'starred',
+        title:'Starred',
+        icon: StarOutline
     },
     {
         name:'more',

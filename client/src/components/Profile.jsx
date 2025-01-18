@@ -46,6 +46,7 @@ function Profile({openpDialog, setpDialog}) {
             <Footer>
                 <Typography fontSize='Large' fontWeight='600'>AKSHAR K H</Typography>
                 <Typography fontSize='medium'>Email : aksharkh04@gmail.com</Typography>
+                <Typography fontSize='medium'>Phone : 9353443100</Typography>
             </Footer>
         </Dialog>
     </div>
