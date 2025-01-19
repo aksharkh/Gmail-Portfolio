@@ -36,7 +36,7 @@ function Email() {
   // Handle email click by navigating to the email detail route
   const handleEmailClick = (emailId) => {
     if (emailId === 2) {
-      window.open('https://drive.google.com/file/d/1v4qfTdeauw_OxfOB962Vkre5XguYdI5m/view', '_blank');  // Open the drive link in a new tab
+      window.open('https://drive.google.com/file/d/1apD2E_V-Je0mFqzkl7z3YnU6KV2rYP8d/view', '_blank');  // Open the drive link in a new tab
     } else {
       navigate(`/emails/inbox/primary/${emailId}`);  // Navigate to the email detail view
     } 
