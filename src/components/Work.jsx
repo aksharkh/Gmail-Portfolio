@@ -28,15 +28,14 @@ const Wrapper = styled(Box)({
 });
 
 function Work() {
-  const navigate = useNavigate();  // Initialize navigate
+  const navigate = useNavigate(); 
 
   const emails = [
     { id: 1, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:15 PM' },
   ];
 
-  // Handle email click by navigating to the email detail route
   const handleWorkClick = (emailId) => {
-    navigate(`/emails/inbox/work/${emailId}`);  // Navigate to the email detail view
+    navigate(`/emails/inbox/work/${emailId}`);  
   };
 
   
@@ -49,7 +48,7 @@ function Work() {
           <StarOutline />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-                      onClick={() => handleWorkClick(email.id)}  // Use navigate here
+                      onClick={() => handleWorkClick(email.id)}  
                       style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%' }}
                     >
                       <Typography style={{ flex: 1 }}>{email.subject}</Typography>

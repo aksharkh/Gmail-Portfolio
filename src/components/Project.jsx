@@ -41,7 +41,6 @@ function Project() {
     { id: 7, subject: 'MERN stack', content: 'Hackthon Management Dashboard', time: '08:00 AM' },
   ];
 
-  // Handle email click by navigating to the email detail route
   const handleProjectClick = (emailId) => {
     navigate(`/emails/inbox/project/${emailId}`);  // Navigate to the email detail view
   };

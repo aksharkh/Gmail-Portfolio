@@ -10,7 +10,6 @@ import Image from '../assets/img.jpg'
 
 const StyledAppBar = styled(AppBar)({
         background :'#F5F5F5',
-        // background : '#D3D3D3',
         boxShadow : 'none'
 })
 

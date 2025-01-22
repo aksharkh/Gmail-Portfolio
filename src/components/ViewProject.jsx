@@ -10,7 +10,7 @@ function ViewProject() {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/emails/inbox/project'); // Navigate back to the "Primary" emails section
+    navigate('/emails/inbox/project'); 
   };
   return (
     <Box>

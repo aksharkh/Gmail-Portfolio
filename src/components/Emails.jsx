@@ -19,7 +19,6 @@ function Emails() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Extract the active tab from the URL
   const activeTab = location.pathname.split('/').pop();
 
   const handleButtonClick = (path) => {

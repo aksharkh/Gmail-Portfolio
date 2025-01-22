@@ -1,7 +1,7 @@
 import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import Image from '../assets/img.jpg'; // Replace with EduQuest project image
+import Image from '../assets/img.jpg'; 
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function ViewProject1() {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/emails/inbox/project'); // Navigate back to the "Primary" emails section
+    navigate('/emails/inbox/project'); 
   };
 
   return (
@@ -85,7 +85,7 @@ function ViewProject1() {
         <Typography variant="body1" align="center" sx={{ mt: 1 }}>
           Check out the project details here:{' '}
           <a
-            href="https://github.com/aksharkh/eduquest" // Replace with actual link
+            href="https://github.com/aksharkh/eduquest" 
             target="_blank"
             rel="noopener noreferrer"
             style={{

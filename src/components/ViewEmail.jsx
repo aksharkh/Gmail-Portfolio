@@ -11,7 +11,7 @@ function ViewEmail() {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/emails/inbox/primary'); // Navigate back to the "Primary" emails section
+    navigate('/emails/inbox/primary'); 
   };
   return (
     <Box>

@@ -11,7 +11,7 @@ function ViewWork() {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/emails/inbox/work'); // Navigate back to the "Primary" emails section
+    navigate('/emails/inbox/work'); 
   };
   return (
     <Box>

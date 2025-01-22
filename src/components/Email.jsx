@@ -25,7 +25,7 @@ const Wrapper = styled(Box)({
 });
 
 function Email() {
-  const navigate = useNavigate();  // Initialize navigate
+  const navigate = useNavigate(); 
 
   const emails = [
     { id: 1, subject: 'About Me', content: 'A developer, creator, and lifelong learner.', time: '01:15 PM' },
