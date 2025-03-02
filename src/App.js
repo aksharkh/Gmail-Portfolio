@@ -14,6 +14,7 @@ import ViewProject3 from './components/ViewProject3';
 import ViewProject4 from './components/ViewProject4';
 import ViewProject5 from './components/ViewProject5';
 import ViewProject6 from './components/ViewProject6';
+import './styles.css'; 
 
 
 
