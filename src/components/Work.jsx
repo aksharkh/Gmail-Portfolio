@@ -1,12 +1,9 @@
 import { LabelImportant, StarOutline } from '@mui/icons-material';
 import { Checkbox, Box, styled, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import ViewWork from './ViewWork';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-
-const Wrapper = styled(Box)({
+const Wrapper = styled(Box)(({ theme }) => ({
   padding: '0 0 0 10px',
   background: '#f2f6fc',
   cursor: 'pointer',
@@ -24,22 +21,21 @@ const Wrapper = styled(Box)({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '10px 20px',
+    flexWrap: 'wrap',
   },
-});
+}));
 
 function Work() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const emails = [
-    { id: 1, subject: 'Internship + FTE', content: 'Qugates Technology Pvt Ltd',time: '11:15 PM' },
-    { id: 2, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:15 PM' },
+    { id: 1, subject: 'Internship + FTE', content: 'Qugates Technology Pvt Ltd', time: '11:15 PM' },
+    { id: 2, subject: 'Internship', content: 'Varcons Technology Pvt Ltd', time: '1:15 PM' },
   ];
 
   const handleWorkClick = (emailId) => {
-    navigate(`/emails/inbox/work/${emailId}`);  
+    navigate(`/emails/inbox/work/${emailId}`);
   };
-
-  
 
   return (
     <Box>
@@ -49,13 +45,43 @@ function Work() {
           <StarOutline />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-                      onClick={() => handleWorkClick(email.id)}  
-                      style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%' }}
-                    >
-                      <Typography style={{ flex: 1 }}>{email.subject}</Typography>
-                      <Typography style={{ flex: 2, textAlign: 'center' }}>{email.content}</Typography>
-                      <Typography style={{ flex: 1, textAlign: 'right',fontSize:'small' }}>{email.time}</Typography>
-                    </Box>
+            onClick={() => handleWorkClick(email.id)}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              width: '100%',
+              flexWrap: 'wrap',
+            }}
+          >
+            <Typography
+              style={{
+                flex: '1 1 100%',
+                fontWeight: 600,
+                fontSize: '1rem',
+              }}
+            >
+              {email.subject}
+            </Typography>
+            <Typography
+              style={{
+                flex: '2 1 100%',
+                textAlign: 'left',
+                fontSize: '0.9rem',
+              }}
+            >
+              {email.content}
+            </Typography>
+            <Typography
+              style={{
+                flex: '1 1 100%',
+                textAlign: 'right',
+                fontSize: '0.8rem',
+              }}
+            >
+              {email.time}
+            </Typography>
+          </Box>
         </Wrapper>
       ))}
     </Box>

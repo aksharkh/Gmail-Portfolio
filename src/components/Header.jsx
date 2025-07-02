@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, styled, InputBase, Box } from '@mui/material';
-import { AccountCircleOutlined, AppsOutlined, HelpOutlineOutlined, Menu as MenuIcon, SettingsOutlined } from '@mui/icons-material';
+import { AppBar, Toolbar, styled, InputBase, Box, IconButton } from '@mui/material';
+import { AppsOutlined, HelpOutlineOutlined, Menu as MenuIcon, SettingsOutlined } from '@mui/icons-material';
 import { gmaillogo } from '../constants/constant';
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
@@ -14,52 +14,59 @@ const StyledAppBar = styled(AppBar)({
 
 const Searchdraw = styled(Box)(({ theme }) => ({
   background: '#f2f6fc',
-  borderRadius: 80,
-  height: 48,
+  borderRadius: 50,
+  height: 40,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '0 15px',
-  flexGrow: 1, // Allows it to take available space
+  padding: '0 10px',
+  flexGrow: 1,
+  flexBasis: 'auto',
 
   '& > div': {
     width: '100%',
-    padding: '0 10px',
+    padding: '0 6px',
   },
 
-  // Responsive Styles
-  [theme.breakpoints.down('md')]: {
-    marginLeft: 0,
-    width: '100%', // Full width on small screens
+  [theme.breakpoints.down('sm')]: {
+    height: 34,
+    '& svg': { fontSize: '18px' },
+    '& input': { fontSize: '0.75rem' },
   },
 }));
 
-const Optionmenu = styled(Box)({
+const Optionmenu = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  gap: 15, // Add spacing between icons
-  flexShrink: 0, // Prevents shrinking
+  gap: 10,
+  flexShrink: 0,
 
   '& > svg': {
     cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '20px',
+    },
   },
 
   '& img': {
     cursor: 'pointer',
     borderRadius: '50%',
-    width: 30,
-    height: 30,
+    width: 28,
+    height: 28,
+    [theme.breakpoints.down('sm')]: {
+      width: 24,
+      height: 24,
+    },
   },
-});
+}));
 
 const Logo = styled('img')(({ theme }) => ({
-  height: 40,
-  marginLeft: 30,
-
-  [theme.breakpoints.down('md')]: {
-    marginLeft: 10,
-    height: 30, // Reduce size on mobile
+  height: 36,
+  marginLeft: 20,
+  [theme.breakpoints.down('sm')]: {
+    marginLeft: 6,
+    height: 26,
   },
 }));
 
@@ -72,18 +79,33 @@ function Header({ toggleDrawer }) {
 
   return (
     <StyledAppBar position="static">
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <MenuIcon color="action" onClick={toggleDrawer} sx={{ cursor: 'pointer' }} />
+      <Toolbar
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          minHeight: { xs: '50px', sm: '64px' },
+          padding: { xs: '0 8px', sm: '0 16px' },
+        }}
+      >
+        {/* Left: Menu + Logo */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 0.5, sm: 1 } }}>
+          <IconButton onClick={toggleDrawer} size="small">
+            <MenuIcon color="action" fontSize="small" />
+          </IconButton>
           <Logo src={gmaillogo} alt="logo" />
         </Box>
 
-        <Searchdraw>
-          <SearchIcon color="action" />
-          <InputBase placeholder="Search mail" sx={{ flex: 1 }} />
-          <TuneIcon color="action" />
-        </Searchdraw>
+        {/* Search */}
+        <Box sx={{ flexGrow: 1, mx: { xs: 1, sm: 2 } }}>
+          <Searchdraw>
+            <SearchIcon color="action" />
+            <InputBase placeholder="Search mail" sx={{ flex: 1, minWidth: 60 }} />
+            <TuneIcon color="action" />
+          </Searchdraw>
+        </Box>
 
+        {/* Right: Icons */}
         <Optionmenu>
           <HelpOutlineOutlined color="action" />
           <SettingsOutlined color="action" />

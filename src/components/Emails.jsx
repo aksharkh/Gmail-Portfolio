@@ -9,26 +9,28 @@ const Wrapperprimary = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   borderBottom: '1px solid lightgray',
-  overflowX: 'auto', // Allow horizontal scrolling if needed
-  whiteSpace: 'nowrap', // Prevents buttons from stacking unnecessarily
+  overflowX: 'auto',
+  whiteSpace: 'nowrap',
   paddingBottom: 5,
   '& > button': {
-    flexGrow: 1, // Allows buttons to be flexible inside the container
-    minWidth: '120px', // Minimum size but flexible
-    maxWidth: '200px', // Prevents excessive stretching
-    textAlign: 'center',borderTop: 'none !important',
+    flexGrow: 1,
+    minWidth: '120px',
+    maxWidth: '200px',
+    textAlign: 'center',
+    borderTop: 'none !important',
     borderLeft: 'none !important',
     borderRight: 'none !important',
     fontSize: 'medium',
     height: '60px',
   },
   [theme.breakpoints.down('sm')]: {
-    flexWrap: 'wrap', // Allows buttons to wrap instead of overflow
+    flexWrap: 'wrap',
     justifyContent: 'center',
     '& > button': {
       minWidth: '80px',
       fontSize: '12px',
       padding: '8px',
+      height: '50px',
     },
   },
 }));
@@ -46,7 +48,10 @@ function Emails() {
 
   return (
     <Box
-      style={openDrawer ? { marginLeft: 250, width: 'calc(100% - 250px)' } : { width: '100%' }}
+      sx={{
+        width: openDrawer ? { xs: '100%', sm: 'calc(100% - 250px)' } : '100%',
+        marginLeft: openDrawer ? { xs: 0, sm: '250px' } : 0,
+      }}
     >
       {/* Top Actions */}
       <Box
@@ -68,9 +73,9 @@ function Emails() {
             key={button.name}
             onClick={() => handleButtonClick(button.path)}
             sx={{
-              height: '50px',
+              height: { xs: '40px', sm: '50px' },
               color: 'black',
-              fontSize: '14px',
+              fontSize: { xs: '12px', sm: '14px' },
               textTransform: 'none',
               borderRadius: 0,
               backgroundColor: activeTab === button.path ? 'lightgray' : 'white',

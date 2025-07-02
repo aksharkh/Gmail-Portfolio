@@ -33,7 +33,7 @@ function ViewWork2() {
           <img
             src={Company}
             alt="Qugates Logo"
-            style={{ cursor: 'pointer', borderRadius: '50%', width: 50, height: 50, marginRight: 16 }}
+            style={{ cursor: 'pointer', marginRight: 16 }}
           />
           <Typography><strong>Full-Stack Developer</strong></Typography>
         </Box>

@@ -21,11 +21,12 @@ const Wrapper = styled(Box)({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '10px 20px',
+    flexWrap: 'wrap',
   },
 });
 
 function Email() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const emails = [
     { id: 1, subject: 'About Me', content: 'A developer, creator, and lifelong learner.', time: '01:15 PM' },
@@ -33,13 +34,12 @@ function Email() {
     { id: 3, subject: 'Education', content: 'My Education Journey', time: '09:45 AM' },
   ];
 
-  // Handle email click by navigating to the email detail route
   const handleEmailClick = (emailId) => {
     if (emailId === 2) {
-      window.open('https://drive.google.com/file/d/1Nr603HNlQhDtH66xDouqONO6iZcgCzLZ/view', '_blank');  // Open the drive link in a new tab
+      window.open('https://drive.google.com/file/d/1Nr603HNlQhDtH66xDouqONO6iZcgCzLZ/view', '_blank');
     } else {
-      navigate(`/emails/inbox/primary/${emailId}`);  // Navigate to the email detail view
-    } 
+      navigate(`/emails/inbox/primary/${emailId}`);
+    }
   };
 
   return (
@@ -50,12 +50,18 @@ function Email() {
           <StarOutline />
           <LabelImportant style={{ marginLeft: '10px' }} />
           <Box
-            onClick={() => handleEmailClick(email.id)}  // Use navigate here
-            style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', width: '100%' }}
+            onClick={() => handleEmailClick(email.id)}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              width: '100%',
+              flexWrap: 'wrap',
+            }}
           >
-            <Typography style={{ flex: 1 }}>{email.subject}</Typography>
-            <Typography style={{ flex: 2, textAlign: 'center' }}>{email.content}</Typography>
-            <Typography style={{ flex: 1, textAlign: 'right',fontSize:'small' }}>{email.time}</Typography>
+            <Typography style={{ flex: '1 1 100%', fontWeight: 600 }}>{email.subject}</Typography>
+            <Typography style={{ flex: '2 1 100%', textAlign: 'left', fontSize: '0.9rem' }}>{email.content}</Typography>
+            <Typography style={{ flex: '1 1 100%', textAlign: 'right', fontSize: '0.8rem' }}>{email.time}</Typography>
           </Box>
         </Wrapper>
       ))}
