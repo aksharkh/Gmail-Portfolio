@@ -15,6 +15,7 @@ import ViewProject4 from './components/ViewProject4';
 import ViewProject5 from './components/ViewProject5';
 import ViewProject6 from './components/ViewProject6';
 import './styles.css'; 
+import ViewWork2 from './components/ViewWork2';
 
 
 
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
           {path: 'project/6', element: <ViewProject5 />},
           {path: 'project/7', element: <ViewProject6 />},
           { path: 'work', element: <Work /> },
-          { path: 'work/:emailId', element: <ViewWork /> },
+          { path: 'work/1', element: <ViewWork2 /> },
+          { path: 'work/2', element: <ViewWork /> },
         ],
       },
       { path: '/', element: <Navigate to="/emails/inbox/primary" /> }, // Redirect to default

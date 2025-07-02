@@ -31,7 +31,8 @@ function Work() {
   const navigate = useNavigate(); 
 
   const emails = [
-    { id: 1, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:15 PM' },
+    { id: 1, subject: 'Internship + FTE', content: 'Qugates Technology Pvt Ltd',time: '11:15 PM' },
+    { id: 2, subject: 'Internship', content: 'Varcons Technology Pvt Ltd',time: '1:15 PM' },
   ];
 
   const handleWorkClick = (emailId) => {
