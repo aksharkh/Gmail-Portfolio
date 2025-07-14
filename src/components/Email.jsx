@@ -36,7 +36,7 @@ function Email() {
 
   const handleEmailClick = (emailId) => {
     if (emailId === 2) {
-      window.open('https://drive.google.com/file/d/1Nr603HNlQhDtH66xDouqONO6iZcgCzLZ/view', '_blank');
+      window.open('https://drive.google.com/file/d/1zkimhlXBd6Qh-CPfSlBkm6u8zWuJa6Q5/view', '_blank');
     } else {
       navigate(`/emails/inbox/primary/${emailId}`);
     }
