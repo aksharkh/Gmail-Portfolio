@@ -1,7 +1,7 @@
 import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
-import React from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+// import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import Company from '../assets/qugates.svg';
 
 function ViewWork2() {

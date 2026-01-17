@@ -2,12 +2,12 @@ import { ArrowBack, Delete, InsertEmoticon, Star } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Company from  '../assets/company.png';
 
 function ViewWork() {
-  const { emailId } = useParams();
+  // const { emailId } = useParams();
   const navigate = useNavigate();
 
   const handleBackClick = () => {

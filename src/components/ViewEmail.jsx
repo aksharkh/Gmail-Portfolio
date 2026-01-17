@@ -3,11 +3,11 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import Image from '../assets/img.jpg';
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 
 function ViewEmail() {
-  const { emailId } = useParams();
+  // const { emailId } = useParams();
   const navigate = useNavigate();
 
   const handleBackClick = () => {
